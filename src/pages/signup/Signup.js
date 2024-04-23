@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import styles from "./Signup.module.css";
+import { useSignup } from "../../hooks/useSignup";
 
 export default function SignUp() {
-  const [username, setUsername] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, email, password);
+    signup(email, password, displayName);
+  };
+
+  const getErrorMessage = (error) => {
+    if (error && error.startsWith("Firebase:")) {
+      let errorMessage = error.split("Firebase:")[1].trim();
+
+      if (errorMessage.includes("(auth/")) {
+        errorMessage = errorMessage.split("(auth/")[0].trim();
+      }
+      return errorMessage;
+    }
+    return error;
   };
 
   return (
@@ -18,8 +32,8 @@ export default function SignUp() {
         <span>username:</span>
         <input
           type="text"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
         />
       </label>
       <label>
@@ -38,7 +52,13 @@ export default function SignUp() {
           value={password}
         />
       </label>
-      <button className="btn">Signup</button>
+      {!isPending && <button className="btn">sign up</button>}
+      {isPending && (
+        <button className="btn" disabled>
+          loading
+        </button>
+      )}
+      {error && <p>{getErrorMessage(error)}</p>}{" "}
     </form>
   );
 }

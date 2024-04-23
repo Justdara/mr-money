@@ -5,7 +5,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
-  const signup = async (email, password, username) => {
+  const signup = async (email, password, displayName) => {
     setError(null);
     setIsPending(true);
 
@@ -20,7 +20,7 @@ export const useSignup = () => {
         throw new Error("Oops, Signup could not be completed");
       }
 
-      await res.user.updateProfile({ username });
+      await res.user.updateProfile({ displayName });
 
       setIsPending(false);
       setError(null);
