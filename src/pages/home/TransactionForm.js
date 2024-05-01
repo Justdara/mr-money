@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useFirestore } from "../../hooks/useFireStore";
 
@@ -15,6 +15,13 @@ export default function TransactionForm({ uid }) {
       amount,
     });
   };
+
+  useEffect(() => {
+    if (response.success) {
+      setName("");
+      setAmount("");
+    }
+  }, [response.success]);
 
   return (
     <>
