@@ -10,6 +10,10 @@ export const useCollection = (collection, _query) => {
   useEffect(() => {
     let ref = projectFirestore.collection(collection);
 
+    if (query) {
+      ref = ref.where(...query);
+    }
+
     const unsubscribe = ref.onSnapshot(
       (snapshot) => {
         let results = [];
