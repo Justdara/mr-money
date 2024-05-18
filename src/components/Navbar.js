@@ -49,7 +49,7 @@ export default function Navbar() {
       <ul
         className={
           nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
+            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-black ease-in-out duration-500"
             : "ease-in-out duration-500 fixed left-[-100%]"
         }
       >
@@ -64,7 +64,7 @@ export default function Navbar() {
             <li className="p-4 border-b border-gray-600">
               <Link to="/login">Login</Link>
             </li>
-            <li className="p-4">
+            <li className="p-4 border-b">
               <Link to="/signup">Signup</Link>
             </li>
           </>
@@ -72,8 +72,8 @@ export default function Navbar() {
 
         {user && (
           <>
-            <li>Hey,{user.displayName}</li>
-            <li>
+            <li className="p-4 border-b uppercase">{user.displayName}</li>
+            <li className="p-4">
               <button className="btn" onClick={logout}>
                 Logout
               </button>
@@ -82,31 +82,5 @@ export default function Navbar() {
         )}
       </ul>
     </div>
-    //   <nav className={styles.navbar}>
-    //     <ul>
-    //       <li className={styles.title}>MRmoney</li>
-    //       {!user && (
-    //         <>
-    //           <li>
-    //             <Link to="/login">Login</Link>
-    //           </li>
-    //           <li>
-    //             <Link to="/signup">Signup</Link>
-    //           </li>
-    //         </>
-    //       )}
-
-    //       {user && (
-    //         <>
-    //           <li>Hey there, {user.displayName}</li>
-    //           <li>
-    //             <button className="btn" onClick={logout}>
-    //               Logout
-    //             </button>
-    //           </li>
-    //         </>
-    //       )}
-    //     </ul>
-    //   </nav>
   );
 }
