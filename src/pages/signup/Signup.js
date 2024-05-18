@@ -27,26 +27,29 @@ export default function SignUp() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.signupform}>
-      <h2>Signup</h2>
+      <h2 className="text-3xl font-bold text-[#F53838]">Signup</h2>
       <label>
-        <span>username:</span>
+        <span>Username:</span>
         <input
+          className="bg-gray-50 border border-gray-300 text-sm rounded-lg  block w-full p-2.5"
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />
       </label>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input
+          className="bg-gray-50 border border-gray-300 text-sm rounded-lg  block w-full p-2.5"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input
+          className="bg-gray-50 border border-gray-300 text-sm rounded-lg  block w-full p-2.5"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}

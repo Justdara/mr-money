@@ -26,18 +26,20 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.loginform}>
-      <h2>login</h2>
+      <h2 className="text-3xl font-bold text-[#F53838]">Login</h2>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input
+          className="bg-gray-50 border border-gray-300 text-sm rounded-lg  block w-full p-2.5"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input
+          className="bg-gray-50 border border-gray-300 text-sm rounded-lg  block w-full p-2.5"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
