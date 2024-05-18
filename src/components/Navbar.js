@@ -16,9 +16,13 @@ export default function Navbar() {
 
   return (
     <div className="flex bg-black justify-between items-center h-[75px] w-full mx-auto px-4 text-white">
-      <h1 className="w-full text-2xl font-bold text-[#F53838]">MRmoney.</h1>
+      <h1 className="w-full pl-12 text-2xl font-bold text-[#F53838]">
+        MRmoney.
+      </h1>
       <ul className="hidden md:flex">
-        <li className="p-5 hover:text-[#F53838] cursor-pointer">Home</li>
+        <li className="p-5 hover:text-[#F53838] cursor-pointer">
+          <Link to="/home">Home</Link>
+        </li>
         <li className="p-5 hover:text-[#F53838] cursor-pointer">About</li>
         <li className="p-5 hover:text-[#F53838] cursor-pointer">Contact</li>
         {!user && (
@@ -56,7 +60,9 @@ export default function Navbar() {
         <h1 className="w-full text-2xl font-bold text-[#F53838] m-4">
           MRmoney.
         </h1>
-        <li className="p-4 border-b border-gray-600">Home</li>
+        <li className="p-4 border-b border-gray-600">
+          <Link to="/home">Home</Link>
+        </li>
         <li className="p-4 border-b border-gray-600">About</li>
         <li className="p-4 border-b border-gray-600">Contact</li>
         {!user && (
