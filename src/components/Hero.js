@@ -1,6 +1,5 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
-import Person from "../assets/Illustration.png";
 
 const Hero = () => {
   return (

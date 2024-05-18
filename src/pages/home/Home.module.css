@@ -65,7 +65,6 @@
   position: relative;
   overflow: hidden;
   border-left: 4px solid #f53838;
-  z-index: -1;
 }
 .transactions .name {
   color: #777;

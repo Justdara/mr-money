@@ -55,7 +55,7 @@ export default function Navbar() {
       <ul
         className={
           nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-black ease-in-out duration-500"
+            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-black ease-in-out duration-500 z-[1]"
             : "ease-in-out duration-500 fixed left-[-100%]"
         }
       >
@@ -66,7 +66,6 @@ export default function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li className="p-4 border-b border-gray-600">
-          {" "}
           <Link to="/about">About</Link>
         </li>
         {!user && (
@@ -82,7 +81,9 @@ export default function Navbar() {
 
         {user && (
           <>
-            <li className="p-4 border-b uppercase">{user.displayName}</li>
+            <li className="p-4 border-b border-gray-600 uppercase">
+              {user.displayName}
+            </li>
             <li className="p-4">
               <button className="btn" onClick={logout}>
                 Logout
