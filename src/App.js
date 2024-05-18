@@ -20,10 +20,10 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/home" element={<HomePage />}></Route>
+            <Route path="/about" element={<HomePage />}></Route>
             <Route
               path="/"
-              element={user ? <Home /> : <Navigate to="login" />}
+              element={user ? <Home /> : <Navigate to="about" />}
             ></Route>
             <Route
               path="/login"

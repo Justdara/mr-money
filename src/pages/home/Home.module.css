@@ -12,7 +12,7 @@
 }
 .side form {
   padding: 20px;
-  background: #1f9751;
+  background: #f53838;
   border-radius: 10px;
 }
 .side input,
@@ -44,7 +44,7 @@
   width: 100%;
 }
 .side h3 {
-  color: #1f9751;
+  color: #f53838;
   margin-bottom: 20px;
 }
 .side aside {
@@ -64,7 +64,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-left: 4px solid #1f9751;
+  border-left: 4px solid #f53838;
   z-index: -1;
 }
 .transactions .name {

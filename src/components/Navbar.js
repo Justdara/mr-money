@@ -21,10 +21,12 @@ export default function Navbar() {
       </h1>
       <ul className="hidden md:flex">
         <li className="p-5 hover:text-[#F53838] cursor-pointer">
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
-        <li className="p-5 hover:text-[#F53838] cursor-pointer">About</li>
-        <li className="p-5 hover:text-[#F53838] cursor-pointer">Contact</li>
+        <li className="p-5 hover:text-[#F53838] cursor-pointer">
+          {" "}
+          <Link to="/about">About</Link>
+        </li>
         {!user && (
           <>
             <li className="p-5 hover:text-[#F53838]">
@@ -61,10 +63,12 @@ export default function Navbar() {
           MRmoney.
         </h1>
         <li className="p-4 border-b border-gray-600">
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
-        <li className="p-4 border-b border-gray-600">About</li>
-        <li className="p-4 border-b border-gray-600">Contact</li>
+        <li className="p-4 border-b border-gray-600">
+          {" "}
+          <Link to="/about">About</Link>
+        </li>
         {!user && (
           <>
             <li className="p-4 border-b border-gray-600">
