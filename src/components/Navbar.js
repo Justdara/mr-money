@@ -62,18 +62,18 @@ export default function Navbar() {
         <h1 className="w-full text-2xl font-bold text-[#F53838] m-4">
           MRmoney.
         </h1>
-        <li className="p-4 border-b border-gray-600">
+        <li onClick={handleNav} className="p-4 border-b border-gray-600">
           <Link to="/">Home</Link>
         </li>
-        <li className="p-4 border-b border-gray-600">
+        <li onClick={handleNav} className="p-4 border-b border-gray-600">
           <Link to="/about">About</Link>
         </li>
         {!user && (
           <>
-            <li className="p-4 border-b border-gray-600">
+            <li onClick={handleNav} className="p-4 border-b border-gray-600">
               <Link to="/login">Login</Link>
             </li>
-            <li className="p-4 border-b">
+            <li onClick={handleNav} className="p-4 border-b">
               <Link to="/signup">Signup</Link>
             </li>
           </>
@@ -84,7 +84,7 @@ export default function Navbar() {
             <li className="p-4 border-b border-gray-600 uppercase">
               {user.displayName}
             </li>
-            <li className="p-4">
+            <li onClick={handleNav} className="p-4">
               <button className="btn" onClick={logout}>
                 Logout
               </button>
